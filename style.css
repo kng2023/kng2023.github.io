@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+img{
+    width: 100%;
+    vertical-align: top;
+}
+
+/* wrap */
+#wrap {
+    width: 100%;
+    position: relative;
+}
+
+#top {
+    background-color: #13242B;
+    width: 100%;
+    height: 32px;
+}
+#top a {
+    color: #fff;
+    align-items: center;
+    display: flex;
+    font-size: 10px;
+    justify-content: center;
+    padding: 8px;
+}
+
+/* header */
+#header {
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+    /* position: relative; */       /* 원래 개념에서는 여기주는데 이번에는 container가 있기 때문에 container에 줘야되는듯 */
+}
+#header .container {
+    position: relative;     /* 가상요소 전체 배경의 기준 */
+}
+#header .logo {
+    /* background-color: #7b3f3f; */
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+#header .nav {
+    width: 45%;
+    height: 100%;
+    z-index: 1000;
+    /* background-color: #099234; */
+}
+#header .nav > ul {
+    display: flex;
+    justify-content: left;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+#header .nav > ul > li {
+    position: relative;     /* 서브메뉴 ul 부분의 기준 */
+}
+#header .nav > ul > li > a {
+    display: inline-block;
+    /* background-color: #a40c0c; */
+    color: #000000;
+    padding: 10px 10px;
+    text-align: center;
+}
+#header .nav > ul > li > a:hover {
+   text-decoration: underline;
+}
+#header .nav > ul > li > ul {
+    position: absolute;
+    left: 0;
+    top: 41px;
+    width: 100%;
+    display: none;
+}
+#header .nav > ul > li > ul > li > a {
+    width: 100%;
+    padding: 10px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 10px;
+    color: #fff;
+}
+#header .nav > ul > li > ul > li > a:hover {
+    text-decoration: underline;
+}
+#header .container::after {
+    content: '';
+    width: calc(100% - 800px);       /* 오른쪽 공간있게 메뉴 짠 거에 맞춰서 */
+    height: 0;
+    background-color: #13242B;
+    position: absolute;
+    left: 0;
+    top: 70px;
+    z-index: 1;
+    transition: all 400ms;
+}
+#header .container.on::after {
+    height: 165px;
+}
+
+#header .container .icon {
+    width: 45%;
+    height: 100%;
+    /* background-color: #d45858; */
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+#header .container .icon .sub {
+    /* background-color: #c99090; */
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: right;
+}
+
+/* slider */
+#slider {
+    width: 100%;
+    height: 550px;
+}
+#slider .container {
+    overflow: hidden;
+}
+#slider .sliderWrap {
+    width: 400%;
+    height: 100%;
+    display: flex;
+}
+#slider .sliderWrap .slider {
+    position: relative;
+    width: 1200px;
+}
+/* contents */
+#contents {
+    width: 100%;
+    height: 675px;
+}
+#contents .container {
+    background-color: #a7bcc5;
+}
+
+/* story */
+#story {
+    width: 100%;
+    height: 446px;
+}
+#story .container {
+    background-color: #6d1818;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #13242B;
+    font-size: 13px;
+}
+#footer .footer1 {
+    width: 80%;
+}
+#footer .footer1 .footer1-1 {
+    width: 100%;
+    height: 50%;
+}
+#footer .footer1 .footer1-1 ul {
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#footer .footer1 .footer1-1 li {
+    /* margin-right: 30px; */
+    border-right: 1px solid #ffffff;
+    padding: 0 10px;
+}
+#footer .footer1 .footer1-1 a {
+    color: #fff;
+}
+#footer .footer1 .footer1-1 li:last-child {
+    border: 0;
+}
+#footer .footer1 .footer1-1 li:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+#footer .footer1 .footer1-2 {
+    width: 100%;
+    height: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    color: #fff;
+}
+#footer .footer2 {
+    width: 20%;
+    height: 100%;
+}
+#footer .footer2 select {
+    width: 200px;
+    height: 30px;
+    margin-top: 30px;
+}
+/* container */
+.container {
+    width: 1200px;
+    height: inherit;
+    /* background-color: rgba(0,0,0,0.4); */
+    margin: 0 auto;
+    display: flex;
+}
